@@ -30,6 +30,16 @@ exports.config = {
     browserName: 'internet explorer',
     seleniumAddress: 'http://10.26.1.34:4444/wd/hub',
     os: 'windows7'
+  },
+  {
+    browserName: 'chrome',
+    seleniumAddress: 'http://10.26.1.55:4444/wd/hub',
+    os: 'windows8'
+  },
+  {
+    browserName: 'internet explorer',
+    seleniumAddress: 'http://10.26.1.55:4444/wd/hub',
+    os: 'windows8'
   }],
   onPrepare:function(){
     var jasmineReporters = require('jasmine-reporters');
