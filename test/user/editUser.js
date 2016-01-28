@@ -5,7 +5,7 @@ var os = "";
 describe('Edit User',function() {
   var name, phone, address;
   var userPageBtn = element(by.css('[href="/user"]'));
-  var editBtn = element.all(by.buttonText('Edit'));
+  var editBtn = element.all(by.css('[class="md-button md-ink-ripple"]'));
   var userNameInput = element(by.model('edit.user.name'));
   var userPhoneInput = element(by.model('edit.user.phone'));
   var userAddressInput = element(by.model('edit.user.address'));
@@ -40,10 +40,25 @@ describe('Edit User',function() {
             phone = '更新-' + os + '-' + env.params.firefox.phone;
             address = '更新-' + os + '-' + env.params.firefox.address;
           break;
-          case 'windows':
-            name = '更新-' + os + '-' + env.params.windows.user;
-            phone = '更新-' + os + '-' + env.params.windows.phone;
-            address = '更新-' + os + '-' + env.params.windows.address;
+          case 'windows7':
+            name = os + '-' + env.params.windows7.user;
+            phone = os + '-' + env.params.windows7.phone;
+            address = os + '-' + env.params.windows7.address;
+          break;
+          case 'windows8':
+            name = '更新-' + os + '-' + env.params.windows8.user;
+            phone = '更新-' + os + '-' + env.params.windows8.phone;
+            address = '更新-' + os + '-' + env.params.windows8.address;
+          break;
+          case 'windows10':
+            name = '更新-' + os + '-' + env.params.windows10.user;
+            phone = '更新-' + os + '-' + env.params.windows10.phone;
+            address = '更新-' + os + '-' + env.params.windows10.address;
+          break;
+          case 'safari':
+            name = '更新-' + os + '-' + env.params.safari.user;
+            phone = '更新-' + os + '-' + env.params.safari.phone;
+            address = '更新-' + os + '-' + env.params.safari.address;
           break;
         }
       });
@@ -66,34 +81,21 @@ describe('Edit User',function() {
           editUserBtn.click();
         }
       }
-    });
-  });
 
-  it('check user page',function() {
-    goToUserPage();
-    userPage.getText().then(function(result) {
-      expect(result).toBe('User');
-    });
-  });
-  
-  it('check name', function() {
-    goToUserPage();
-    userNameList.getText().then(function(result) {
-      expect(result).toContain(name);
-    });
-  });
+      userPage.getText().then(function(result) {
+        expect(result).toBe('User');
+      });
+      userNameList.getText().then(function(result) {
+        expect(result).toContain(name);
+      });
 
-  it('check phone', function() {
-    goToUserPage();
-    userPhoneList.getText().then(function(result) {
-      expect(result).toContain('Phone: ' + phone);
-    });
-  });
+      userPhoneList.getText().then(function(result) {
+        expect(result).toContain('Phone: ' + phone);
+      });
 
-  it('check address', function() {
-    goToUserPage();
-    userAddressList.getText().then(function(result) {
-      expect(result).toContain('Address: ' + address);
+      userAddressList.getText().then(function(result) {
+        expect(result).toContain('Address: ' + address);
+      });
     });
   });
 });

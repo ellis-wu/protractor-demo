@@ -24,7 +24,7 @@ describe('Go About Page',function() {
   it('check about page',function() {
     goToAboutPage();
     aboutPage.getText().then(function(result) {
-      expect(result).toBe('About page.');
+      expect(result).toBe('About page');
     });
   });
 });

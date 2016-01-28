@@ -22,7 +22,7 @@ describe('zh-TW version',function() {
       expect(result).toBe('範例應用程式');
     });
     title.getText().then(function(result) {
-      expect(result).toBe('首頁。');
+      expect(result).toBe('首頁');
     });
   });
 });

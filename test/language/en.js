@@ -22,7 +22,7 @@ describe('zh-TW version',function() {
       expect(result).toBe('DemoApp');
     });
     title.getText().then(function(result) {
-      expect(result).toBe('Home page.');
+      expect(result).toBe('Home page');
     });
   });
 });

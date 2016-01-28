@@ -2,7 +2,7 @@ var env = require('../../environment.js');
 
 describe('Create User',function() {
   var userPageBtn = element(by.css('[href="/user"]'));
-  var createBtn = element(by.buttonText('Create'));
+  var createBtn = element(by.css('[class="md-raised md-primary md-button md-ink-ripple"]'));
   var userNameInput = element(by.model('create.user.name'));
   var userPhoneInput = element(by.model('create.user.phone'));
   var userAddressInput = element(by.model('create.user.address'));
@@ -22,12 +22,6 @@ describe('Create User',function() {
     userPageBtn.click();
   }
 
-  function setUserCount() {
-    userNameList.count().then(function(result) {
-      userCount = result;
-    });
-  }
-
   beforeEach(function() {
     browser.get(env.web);
     browser.getProcessedConfig().then(function(config) {
@@ -44,10 +38,25 @@ describe('Create User',function() {
             phone = os + '-' + env.params.firefox.phone;
             address = os + '-' + env.params.firefox.address;
           break;
-          case 'windows':
-            name = os + '-' + env.params.windows.user;
-            phone = os + '-' + env.params.windows.phone;
-            address = os + '-' + env.params.windows.address;
+          case 'windows7':
+            name = os + '-' + env.params.windows7.user;
+            phone = os + '-' + env.params.windows7.phone;
+            address = os + '-' + env.params.windows7.address;
+          break;
+          case 'windows8':
+            name = os + '-' + env.params.windows8.user;
+            phone = os + '-' + env.params.windows8.phone;
+            address = os + '-' + env.params.windows8.address;
+          break;
+          case 'windows10':
+            name = os + '-' + env.params.windows10.user;
+            phone = os + '-' + env.params.windows10.phone;
+            address = os + '-' + env.params.windows10.address;
+          break;
+          case 'safari':
+            name = os + '-' + env.params.safari.user;
+            phone = os + '-' + env.params.safari.phone;
+            address = os + '-' + env.params.safari.address;
           break;
         }
       });
@@ -63,31 +72,19 @@ describe('Create User',function() {
     userPhoneInput.sendKeys(phone);
     userAddressInput.sendKeys(address);
     createUserBtn.click();
-  });
 
-  it('check user page',function() {
-    goToUserPage();
     userPage.getText().then(function(result) {
       expect(result).toBe('User');
     });
-  });
-  
-  it('check name', function() {
-    goToUserPage();
+
     userNameList.getText().then(function(result) {
       expect(result).toContain(name);
     });
-  });
 
-  it('check phone', function() {
-    goToUserPage();
     userPhoneList.getText().then(function(result) {
       expect(result).toContain('Phone: '+phone);
     });
-  });
 
-  it('check address', function() {
-    goToUserPage();
     userAddressList.getText().then(function(result) {
       expect(result).toContain('Address: '+address);
     });

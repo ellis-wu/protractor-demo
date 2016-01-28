@@ -4,7 +4,7 @@ var os = "";
 
 describe('Remove User',function() {
   var userPageBtn = element(by.css('[href="/user"]'));
-  var removeBtn = element.all(by.buttonText('Remove'));
+  var removeBtn = element.all(by.css('[class="md-warn md-button md-ink-ripple"]'));
   var yesBtn = element(by.buttonText('Yes'));
   var userNameList = element.all(by.repeater('user in list.users').column('user.name'));
   var userPhoneList = element.all(by.repeater('user in list.users').column('user.phone'));
@@ -17,12 +17,6 @@ describe('Remove User',function() {
 
   function goToUserPage() {
     userPageBtn.click();
-  }
-
-  function setUserCount() {
-    userNameList.count().then(function(result) {
-      userCount = result;
-    });
   }
 
   beforeEach(function() {
@@ -42,10 +36,25 @@ describe('Remove User',function() {
             phone = '更新-' + os + '-' + env.params.firefox.phone;
             address = '更新-' + os + '-' + env.params.firefox.address;
           break;
-          case 'windows':
-            name = '更新-' + os + '-' + env.params.windows.user;
-            phone = '更新-' + os + '-' + env.params.windows.phone;
-            address = '更新-' + os + '-' + env.params.windows.address;
+          case 'windows7':
+            name = os + '-' + env.params.windows7.user;
+            phone = os + '-' + env.params.windows7.phone;
+            address = os + '-' + env.params.windows7.address;
+          break;
+          case 'windows8':
+            name = '更新-' + os + '-' + env.params.windows8.user;
+            phone = '更新-' + os + '-' + env.params.windows8.phone;
+            address = '更新-' + os + '-' + env.params.windows8.address;
+          break;
+          case 'windows10':
+            name = '更新-' + os + '-' + env.params.windows10.user;
+            phone = '更新-' + os + '-' + env.params.windows10.phone;
+            address = '更新-' + os + '-' + env.params.windows10.address;
+          break;
+          case 'safari':
+            name = '更新-' + os + '-' + env.params.safari.user;
+            phone = '更新-' + os + '-' + env.params.safari.phone;
+            address = '更新-' + os + '-' + env.params.safari.address;
           break;
         }
       });
@@ -64,13 +73,10 @@ describe('Remove User',function() {
           wait(2);
         }
       }
-    });
-  });
-  
-  it('Check User List Count',function() {
-    goToUserPage();
-    userNameList.count().then(function(result) {
-      expect(result).not.toContain("更新-" + os + '-' + useBrowser + "-user");
+
+      userNameList.count().then(function(result) {
+        expect(result).not.toContain("更新-" + os + '-' + useBrowser + "-user");
+      });
     });
   });
 });

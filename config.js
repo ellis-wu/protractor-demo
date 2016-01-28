@@ -27,7 +27,7 @@ exports.config = {
     os: 'windows7'
   },
   {
-    browserName: 'internet explorer',
+    browserName: 'internet explorer', //IE10
     seleniumAddress: 'http://10.26.1.34:4444/wd/hub',
     os: 'windows7'
   },
@@ -37,9 +37,19 @@ exports.config = {
     os: 'windows8'
   },
   {
-    browserName: 'internet explorer',
+    browserName: 'internet explorer', //IE11
     seleniumAddress: 'http://10.26.1.55:4444/wd/hub',
     os: 'windows8'
+  },
+  {
+    browserName: 'chrome',
+    seleniumAddress: 'http://10.26.1.56:4444/wd/hub',
+    os: 'windows10'
+  },
+  {
+    browserName: 'safari',
+    seleniumAddress: 'http://10.21.20.202:4444/wd/hub',
+    os: 'mac'
   }],
   onPrepare:function(){
     var jasmineReporters = require('jasmine-reporters');
