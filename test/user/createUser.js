@@ -38,20 +38,10 @@ describe('Create User',function() {
             phone = os + '-' + env.params.firefox.phone;
             address = os + '-' + env.params.firefox.address;
           break;
-          case 'windows7':
-            name = os + '-' + env.params.windows7.user;
-            phone = os + '-' + env.params.windows7.phone;
-            address = os + '-' + env.params.windows7.address;
-          break;
-          case 'windows8':
-            name = os + '-' + env.params.windows8.user;
-            phone = os + '-' + env.params.windows8.phone;
-            address = os + '-' + env.params.windows8.address;
-          break;
-          case 'windows10':
-            name = os + '-' + env.params.windows10.user;
-            phone = os + '-' + env.params.windows10.phone;
-            address = os + '-' + env.params.windows10.address;
+          case 'internet explorer'
+            name = os + '-' + env.params.ie.user;
+            phone = os + '-' + env.params.ie.phone;
+            address = os + '-' + env.params.ie.address;
           break;
           case 'safari':
             name = os + '-' + env.params.safari.user;
@@ -66,16 +56,16 @@ describe('Create User',function() {
   it('create user', function() {
     wait(2);
     goToUserPage();
-    setUserCount();
+    
+    userPage.getText().then(function(result) {
+      expect(result).toBe('User');
+    });
+
     createBtn.click();
     userNameInput.sendKeys(name);
     userPhoneInput.sendKeys(phone);
     userAddressInput.sendKeys(address);
     createUserBtn.click();
-
-    userPage.getText().then(function(result) {
-      expect(result).toBe('User');
-    });
 
     userNameList.getText().then(function(result) {
       expect(result).toContain(name);

@@ -40,25 +40,10 @@ describe('Edit User',function() {
             phone = '更新-' + os + '-' + env.params.firefox.phone;
             address = '更新-' + os + '-' + env.params.firefox.address;
           break;
-          case 'windows7':
-            name = os + '-' + env.params.windows7.user;
-            phone = os + '-' + env.params.windows7.phone;
-            address = os + '-' + env.params.windows7.address;
-          break;
-          case 'windows8':
-            name = '更新-' + os + '-' + env.params.windows8.user;
-            phone = '更新-' + os + '-' + env.params.windows8.phone;
-            address = '更新-' + os + '-' + env.params.windows8.address;
-          break;
-          case 'windows10':
-            name = '更新-' + os + '-' + env.params.windows10.user;
-            phone = '更新-' + os + '-' + env.params.windows10.phone;
-            address = '更新-' + os + '-' + env.params.windows10.address;
-          break;
-          case 'mac':
-            name = '更新-' + os + '-' + env.params.mac.user;
-            phone = '更新-' + os + '-' + env.params.mac.phone;
-            address = '更新-' + os + '-' + env.params.mac.address;
+          case 'safari':
+            name = '更新-' + os + '-' + env.params.safari.user;
+            phone = '更新-' + os + '-' + env.params.safari.phone;
+            address = '更新-' + os + '-' + env.params.safari.address;
           break;
         }
       });
@@ -68,6 +53,11 @@ describe('Edit User',function() {
   it('Edit User',function() {
     wait(2);
     goToUserPage();
+    
+    userPage.getText().then(function(result) {
+        expect(result).toBe('User');
+    });
+
     userNameList.getText().then(function(result) {
       for(var i = 0; i < result.length; i++){
         if(result[i] == os + '-' + useBrowser + "-user") {
@@ -82,9 +72,6 @@ describe('Edit User',function() {
         }
       }
 
-      userPage.getText().then(function(result) {
-        expect(result).toBe('User');
-      });
       userNameList.getText().then(function(result) {
         expect(result).toContain(name);
       });

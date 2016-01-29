@@ -36,20 +36,10 @@ describe('Remove User',function() {
             phone = '更新-' + os + '-' + env.params.firefox.phone;
             address = '更新-' + os + '-' + env.params.firefox.address;
           break;
-          case 'windows7':
-            name = os + '-' + env.params.windows7.user;
-            phone = os + '-' + env.params.windows7.phone;
-            address = os + '-' + env.params.windows7.address;
-          break;
-          case 'windows8':
-            name = '更新-' + os + '-' + env.params.windows8.user;
-            phone = '更新-' + os + '-' + env.params.windows8.phone;
-            address = '更新-' + os + '-' + env.params.windows8.address;
-          break;
-          case 'windows10':
-            name = '更新-' + os + '-' + env.params.windows10.user;
-            phone = '更新-' + os + '-' + env.params.windows10.phone;
-            address = '更新-' + os + '-' + env.params.windows10.address;
+          case 'internet explorer'
+            name = os + '-' + env.params.ie.user;
+            phone = os + '-' + env.params.ie.phone;
+            address = os + '-' + env.params.ie.address;
           break;
           case 'safari':
             name = '更新-' + os + '-' + env.params.safari.user;
