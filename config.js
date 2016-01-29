@@ -27,12 +27,22 @@ exports.config = {
     os: 'windows7'
   },
   {
+    browserName: 'firefox',
+    seleniumAddress: 'http://10.26.1.34:4444/wd/hub',
+    os: 'windows7'
+  },
+  {
     browserName: 'internet explorer', //IE10
     seleniumAddress: 'http://10.26.1.34:4444/wd/hub',
     os: 'windows7'
   },
   {
     browserName: 'chrome',
+    seleniumAddress: 'http://10.26.1.55:4444/wd/hub',
+    os: 'windows8'
+  },
+  {
+    browserName: 'firefox',
     seleniumAddress: 'http://10.26.1.55:4444/wd/hub',
     os: 'windows8'
   },
@@ -47,7 +57,27 @@ exports.config = {
     os: 'windows10'
   },
   {
+    browserName: 'firefox',
+    seleniumAddress: 'http://10.26.1.56:4444/wd/hub',
+    os: 'windows10'
+  },
+  {
+    browserName: 'internet explorer', //IE11
+    seleniumAddress: 'http://10.26.1.56:4444/wd/hub',
+    os: 'windows10'
+  },
+  {
     browserName: 'safari',
+    seleniumAddress: 'http://10.21.20.202:4444/wd/hub',
+    os: 'mac'
+  },
+  {
+    browserName: 'chrome',
+    seleniumAddress: 'http://10.21.20.202:4444/wd/hub',
+    os: 'mac'
+  },
+  {
+    browserName: 'firefox',
     seleniumAddress: 'http://10.21.20.202:4444/wd/hub',
     os: 'mac'
   }],
