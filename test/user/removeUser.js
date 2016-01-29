@@ -64,7 +64,6 @@ describe('Remove User',function() {
   it('Remove User',function() {
     wait(2);
     goToUserPage();
-    setUserCount();
     userNameList.getText().then(function(result) {
       for(var i = 0; i < result.length; i++){
         if(result[i] == "更新-" + os + '-' + useBrowser + "-user") {

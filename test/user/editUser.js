@@ -55,10 +55,10 @@ describe('Edit User',function() {
             phone = '更新-' + os + '-' + env.params.windows10.phone;
             address = '更新-' + os + '-' + env.params.windows10.address;
           break;
-          case 'safari':
-            name = '更新-' + os + '-' + env.params.safari.user;
-            phone = '更新-' + os + '-' + env.params.safari.phone;
-            address = '更新-' + os + '-' + env.params.safari.address;
+          case 'mac':
+            name = '更新-' + os + '-' + env.params.mac.user;
+            phone = '更新-' + os + '-' + env.params.mac.phone;
+            address = '更新-' + os + '-' + env.params.mac.address;
           break;
         }
       });
