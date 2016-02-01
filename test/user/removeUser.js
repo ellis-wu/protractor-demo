@@ -36,7 +36,7 @@ describe('Remove User',function() {
             phone = '更新-' + os + '-' + env.params.firefox.phone;
             address = '更新-' + os + '-' + env.params.firefox.address;
           break;
-          case 'internet explorer'
+          case 'internet explorer':
             name = os + '-' + env.params.ie.user;
             phone = os + '-' + env.params.ie.phone;
             address = os + '-' + env.params.ie.address;

@@ -38,7 +38,7 @@ describe('Create User',function() {
             phone = os + '-' + env.params.firefox.phone;
             address = os + '-' + env.params.firefox.address;
           break;
-          case 'internet explorer'
+          case 'internet explorer':
             name = os + '-' + env.params.ie.user;
             phone = os + '-' + env.params.ie.phone;
             address = os + '-' + env.params.ie.address;
@@ -56,7 +56,7 @@ describe('Create User',function() {
   it('create user', function() {
     wait(2);
     goToUserPage();
-    
+
     userPage.getText().then(function(result) {
       expect(result).toBe('User');
     });
