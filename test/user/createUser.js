@@ -56,16 +56,15 @@ describe('Create User',function() {
   it('create user', function() {
     wait(2);
     goToUserPage();
-
-    userPage.getText().then(function(result) {
-      expect(result).toBe('User');
-    });
-
     createBtn.click();
     userNameInput.sendKeys(name);
     userPhoneInput.sendKeys(phone);
     userAddressInput.sendKeys(address);
     createUserBtn.click();
+
+    userPage.getText().then(function(result) {
+      expect(result).toBe('User');
+    });
 
     userNameList.getText().then(function(result) {
       expect(result).toContain(name);
