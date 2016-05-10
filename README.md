@@ -6,7 +6,7 @@
 * 測試工具：[Protractor](https://angular.github.io/protractor/#/)
 
 # Run
-將本範例檔案移至```angular-es2015-demo-app```，並修改```config.js```中的```seleniumAddress```，完成後執行 Protractor 進行測試
+將本範例檔案移至```angular-es2015-demo-app```資料夾底下，並修改```config.js```中的```seleniumAddress```，完成後執行 Protractor 進行測試
 ```
 $ protractor config.js
 ```
